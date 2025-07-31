@@ -1,6 +1,6 @@
 import express from 'express';
 import userAuth from '../middlewares/AuthUser.js';
-import { getAllOrders, getOrderByUserId } from '../controllers/orderController';
+import { getAllOrders, getOrderByUserId, placeOrderCOD } from '../controllers/orderController.js';
 import authSeller from '../middlewares/AuthSeller.js';
 
 

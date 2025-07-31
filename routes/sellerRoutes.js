@@ -6,7 +6,7 @@ const sellerRouter = express.Router();
 
 sellerRouter.post('/login', SellerLogin)
 
-sellerRouter.post('/is-auth', authSeller, isSellerAuthenticated)
+sellerRouter.get('/is-auth', authSeller, isSellerAuthenticated)
 
 sellerRouter.post('/logout', sellerLogout)
 

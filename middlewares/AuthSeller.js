@@ -8,8 +8,9 @@ const authSeller = async (req, res, next) =>{
 
     }
     try{
-        const tokenDecode= jwt.verify(token, process.env.JWT_SECRET);
+        const tokenDecode = jwt.verify(sellerToken, process.env.JWT_SECRET);
         if(tokenDecode.email === process.env.SELLER_EMAIL){
+            req.seller = tokenDecode;
             next() //if Id is available we are sending it to the body
         }else{
             return res.json({success:false, message:"Token doesn't have id"})

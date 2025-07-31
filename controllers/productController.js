@@ -1,6 +1,6 @@
 // Adding product... displaying list of products... modifying the stock ...
 import {v2 as cloudinary} from 'cloudinary'
-import productModel from '../models/ProductModel';
+import productModel from '../models/ProductModel.js';
 
 export const addProductController = async(req, res)=>{
     
