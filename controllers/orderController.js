@@ -12,10 +12,12 @@ export const placeOrderCOD = async (req, res) => {
         }
         //Calculate the amount usingitems
         //accumulator: 
-        let amount = await items.reduce(async(accumulator, item)=>{
-            const product = await productModel.findById(item.product);
-            return (await accumulator ) + product.offerPrice * item.quantity;
-        }, 0)
+        // let amount = await items.reduce(async(accumulator, item)=>{
+        //     const product = await productModel.findById(item.product);
+        //     return (await accumulator ) + product.offerPrice * item.quantity;
+        // }, 0)
+
+        let amount = 0;
 
         await orderModel.create({
             userId, items, amount, address, paymentType: "COD", 
