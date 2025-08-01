@@ -41,6 +41,7 @@ export const registerController = async(req, res) => {
 
 
 
+
 export const loginController = async (req, res)=>{
     const {email, password} = req.body;
     if(!email || !password){
@@ -70,7 +71,7 @@ export const loginController = async (req, res)=>{
                 maxAge: 7 * 24 * 60 * 60 * 1000, //After 7days it should expire
                         
             })
-            return res.json({success: true});
+            return res.json({success: true , user: {email: userExist.email, name: userExist.name}});
     }catch(error){
         res.json({success: false, message: error.message})       
     }
@@ -91,7 +92,9 @@ export const isAuthenticated =async(req, res) =>{
             return res.json({success: false, message: "Account Not Verified"})
 
         }
-        return res.json({success: true, message: "Account Verified"})
+        return res.json({success: true, message: "Account Verified",
+            user: userExist
+        })
         
 
 

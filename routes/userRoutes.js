@@ -9,4 +9,5 @@ userRouter.post('/login', loginController)
 userRouter.get('/isAuth', userAuth ,isAuthenticated)
 userRouter.get('/logout', userAuth, Logout)
 
+
 export default userRouter
